@@ -8,8 +8,8 @@ phases:
     commands:
       - sudo yum update -y
       - echo "Fazendo login no ECR..."      
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 148761658767.dkr.ecr.us-east-1.amazonaws.com
-      - REPOSITORY_URI=148761658767.dkr.ecr.us-east-1.amazonaws.com/meddiflux
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 975050217683.dkr.ecr.us-east-1.amazonaws.com        
+      - REPOSITORY_URI=975050217683.dkr.ecr.us-east-1.amazonaws.com/meddiflux
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:-latest}  # Garantir que o fallback seja o 'latest' caso o COMMIT_HASH esteja vazio
 
